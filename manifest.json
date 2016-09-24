@@ -1,0 +1,19 @@
+{
+  "name": "Performance Log Display",
+  "version": "0.1",
+  "description": "Displays the performance log results.",
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+	"js": ["content.js"]
+  }],
+  "browser_action": {
+     "default_icon": "contentSettings.png",
+     "default_popup": "popup.html"
+  },
+  "permissions":  [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}

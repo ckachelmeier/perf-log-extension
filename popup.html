@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popup</title>
+    <style>
+      .success {
+		color: green;
+	  }
+	  .failure {
+		color: red;
+	  }
+    </style>
+    <script src="popup.js"></script>
+	<script src="mustache.js"></script>
+	<script id="row-template" type="text/template">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th class="success">Count</th>
+				<th class="success">Min</th>
+				<th class="success">Average</th>
+				<th class="success">Max</th>
+				<th class="success">Std. Dev.</th>
+				<th class="failure">Count</th>
+				<th class="failure">Min</th>
+				<th class="failure">Average</th>
+				<th class="failure">Max</th>
+				<th class="failure">Std. Dev.</th>
+			</tr>
+			{{#logs}}
+			<tr>
+				<td class="success">{{name}}</th>
+				<td class="success">{{successes}}</th>
+				<td class="success">{{successMin}}</th>
+				<td class="success">{{successAverage}}</th>
+				<td class="success">{{successMax}}</th>
+				<td class="success">{{successStandardDeviation}}</th>
+				<td class="failure">{{failures}}</th>
+				<td class="failure">{{failureMin}}</th>
+				<td class="failure">{{failureAverage}}</th>
+				<td class="failure">{{failureMax}}</th>
+				<td class="failure">{{failureStandardDeviation}}</th>
+			</tr>
+			{{/logs}}
+		</table>
+	</script>
+  </head>
+  
+  
+  <body>
+    <button onclick="refresh">Refresh</button>
+	<div id="logs">
+	</div>
+  </body>
+</html>
